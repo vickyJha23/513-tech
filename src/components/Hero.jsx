@@ -1,16 +1,25 @@
-import React from 'react'
+import React, {useEffect} from 'react';
+import AOS from 'aos';
+
+import "aos/dist/aos.css";
+
 
 const Hero = () => {
+     useEffect(() => {
+           AOS.init({
+              once: false,
+              mirror: true
+           });
+           AOS.refresh();
+     }, [])
   return (
-    <section className='w-full h-screen flex items-end justify-center' style={{
-         backgroundImage: "url('https://websitedemos.net/agency-02/wp-content/uploads/sites/30/2020/06/home-hero-bg.jpg')",
-         backgroundSize: "cover",
-         backgroundPosition: "center",
-         backgroundRepeat: "no-repeat",
-         backgroundAttachment: "fixed"
-    }}>
-      <div className='bg-[rgba(73,79,113,0.7)]  w-full h-full flex justify-center items-center'>
-             <div className='container mx-auto flex flex-col gap-6 items-center md:items-start px-3'>
+    <section className='w-full h-screen' style={{ backgroundImage: "url('https://cdn.sigma.software/wp-content/uploads/2023/01/service-webdesign-hero-1440@3x.jpg')",
+      backgroundSize: "cover",
+      backgroundPosition: "center center",
+      backgroundRepeat: "no-repeat",
+     }}>
+      <div className='w-full h-full flex justify-center items-center relative before:absolute before:top-0 before:left-0 before:right-0 before:w-full before:h-full before:bg-[#242a56] before:opacity-80'>
+             <div className='container mx-auto flex flex-col gap-6 items-center md:items-start px-8' data-aos='fade-up' data-aos-duration='2000' data-aos-once='false'>
                  <h3 className='capitalize font-bold text-white text-lg max-w-80 text-center md:text-left md:max-w-md'>Fastest and most Lightweight wp theme</h3>
                  <h1 className='text-center capitalize max-w-80 font-bold text-3xl text-white md:text-left md:max-w-md md:text-5xl xl:max-w-lg'>
                      Create amazing buisness website

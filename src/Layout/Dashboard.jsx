@@ -7,8 +7,8 @@ import Hero from '../components/Hero';
 const Dashboard = () => {
   return (
       <section>
-            <Header />
-            <Hero /> 
+                <Header />
+                <Hero />
             <main>
                 <Outlet />    
             </main>

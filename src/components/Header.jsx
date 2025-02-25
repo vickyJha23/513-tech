@@ -10,7 +10,7 @@ const Header = () => {
  
 
   return (
-       <header className='fixed top-0 left-0 right-0 z-10'>
+       <header className="absolute top-0 left-0 right-0 w-full h-25 bg-transparent z-20">
             <Navbar toggleSidebarVisibility={toggleSidebarVisibility} />
             <Sidebar isSidebarVisible={isSidebarVisibible} toggleSidebarVisibility={toggleSidebarVisibility} />   
        </header>

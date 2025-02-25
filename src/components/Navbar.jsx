@@ -6,7 +6,6 @@ import { HiMiniBars3BottomLeft } from "react-icons/hi2";
 import Logo from './Logo'
 
 const Navbar = ({toggleSidebarVisibility}) => {
-  console.log("Navbar");
   return (
      <nav className='w-full h-full'>
          <div className='container mx-auto h-full flex justify-between items-center px-6 py-3'>
