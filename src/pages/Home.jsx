@@ -1,5 +1,4 @@
 import React from 'react';
-import "aos/dist/aos.css";
 
 
 // components will be here
@@ -9,11 +8,9 @@ import Portfolio from '../components/Portfolio';
 const Home = () => {
 
   return (
-    <section className='w-full flex justify-center items-center'>
-        <div className='container mx-auto h-full'>
+    <section className='w-full'>
             <ServiceCards />
             <Portfolio />
-        </div>
     </section>
   )
 }
