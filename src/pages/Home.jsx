@@ -4,6 +4,7 @@ import React from 'react';
 // components will be here
 import ServiceCards from '../components/ServiceCards';
 import Portfolio from '../components/Portfolio';
+import TeamMembers from '../components/TeamMembers';
 
 const Home = () => {
 
@@ -11,6 +12,7 @@ const Home = () => {
     <section className='w-full'>
             <ServiceCards />
             <Portfolio />
+            <TeamMembers />
     </section>
   )
 }
