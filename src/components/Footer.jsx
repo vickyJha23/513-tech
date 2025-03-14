@@ -1,9 +1,40 @@
-import React from 'react'
+import React, {useRef, useEffect} from 'react';
+import { Link } from 'react-router-dom';
 
+import Logo from './Logo';
 
-import Logo from './Logo'
 
 const Footer = () => {
+    const menuScrollRef = useRef(null);
+    useEffect(() => {
+         if(!menuScrollRef.current) return;
+         const menuScrollItems = [...menuScrollRef.current.querySelectorAll("li")];
+          const  handleClick = (e) => {
+            const toBeScrolledSectionId =  e.currentTarget.textContent.trim().toLowerCase();
+            const toBeScrolledSection =  document.getElementById(toBeScrolledSectionId);
+            if(toBeScrolledSection){
+                   const position = toBeScrolledSection.getBoundingClientRect().top + window.scrollY;
+                   window.scrollTo({ top: position,
+                    left: 0, behavior: 'smooth' });
+                  toBeScrolledSection.scrollIntoView({
+                    behavior: 'smooth',
+                  })
+            }
+         }
+          menuScrollItems.forEach((menuScrollItem) => {
+                menuScrollItem.addEventListener("click", handleClick)
+          })
+
+          return () => {
+              menuScrollItems.forEach((menuScrollItem) => {
+                     menuScrollItem.removeEventListener("click", handleClick) 
+              })
+          }
+    })
+
+
+
+
   return (
     <section className='w-full bg-[#242B56]'>
       <div className='w-full pt-8'>
@@ -19,19 +50,31 @@ const Footer = () => {
               <div className='flex-1/4 flex flex-col gap-4'>
                 <h3 className='text-white font-bold text-xl tracking-wide'>Company</h3>
                 <ul className='flex flex-col gap-2 text-white font-light'>
-                  <li>Home</li>
-                  <li>About</li>
-                  <li>Services</li>
-                  <li>Contact</li>
+                  <li>
+                   <Link to="/"> Home</Link> 
+                   </li>
+                  <li>
+                      <Link to="/about">About</Link>
+                  </li>
+                  <li>
+                      <Link to="/services">
+                         Services
+                       </Link> 
+                  </li>
+                  <li>
+                       <Link to="/contact">
+                           Contact
+                       </Link> 
+                  </li>
                 </ul>
               </div>
               <div className='flex-1/4 flex flex-col gap-4'>
                 <h3 className='text-white font-bold text-xl tracking-wide'>Buisness</h3>
-                <ul className='flex flex-col gap-2 text-white font-light'>
-                  <li>Project</li>
-                  <li>OurTeam</li>
-                  <li>Facts</li>
-                  <li>Customers</li>
+                <ul ref={menuScrollRef} className='flex flex-col gap-2 text-white font-light'>
+                     <li className='cursor-pointer'>Projects</li>
+                     <li className='cursor-pointer'>OurTeam</li>
+                     <li className='cursor-pointer'>Facts</li>
+                     <li className='cursor-pointer'>Customers</li>
                 </ul>
               </div>
               <div className='flex-1/4 flex flex-col gap-4'>

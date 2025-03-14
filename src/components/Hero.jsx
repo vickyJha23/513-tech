@@ -1,7 +1,10 @@
 import React, {useEffect} from 'react';
+import { useLocation } from "react-router-dom";
 import AOS from 'aos';
 
 const Hero = () => {
+   const { pathname } = useLocation();
+  
      useEffect(() => {
            AOS.init({
               once: false,
@@ -9,6 +12,24 @@ const Hero = () => {
            });
            AOS.refresh();
      }, [])
+
+   if(pathname.slice(1) === "about"){
+        return <section className='w-full h-[60vh]' style={{ backgroundImage: "url('https://cdn.sigma.software/wp-content/uploads/2023/01/service-webdesign-hero-1440@3x.jpg')",
+          backgroundSize: "cover",
+          backgroundPosition: "center center",
+          backgroundRepeat: "no-repeat",
+         }}>
+             <div className='w-full h-full flex justify-center items-center relative before:absolute before:top-0 before:left-0 before:right-0 before:w-full before:h-full before:bg-[#242a56] before:opacity-80'>
+                 <div className='w-full h-full flex justify-center items-center'>
+                       <h2 className='text-2xl text-white capitalize tracking-wide font-bold bg-black'>Home / {pathname.slice(1)}</h2>
+                 </div>
+
+             </div>
+
+        </section>
+   }  
+
+
   return (
     <section className='w-full h-screen' style={{ backgroundImage: "url('https://cdn.sigma.software/wp-content/uploads/2023/01/service-webdesign-hero-1440@3x.jpg')",
       backgroundSize: "cover",

@@ -8,7 +8,7 @@ import CustomerTestimonials from './CustomerTestimonials';
 
 const Portfolio = () => {
   return (
-    <section className='w-full'>
+    <section id='projects' className='w-full'>
       <div className='bg-white'>
         <div className='container mx-auto flex flex-col items-center justify-center'>
           <div className='px-8 flex flex-col items-center'>

@@ -4,7 +4,7 @@ import Title from './Title'
 
 const CustomerTestimonial = () => {
   return (
-    <div className='h-full flex flex-col gap-6 items-center pb-16'>
+    <div id='facts' className='h-full flex flex-col gap-6 items-center'>
       <div className='pt-16  flex flex-col items-center gap-6'>
           <h2 className='text-center w-[320px] sm:w-full font-bold text-xl text-[#232B55] max-w-80 md:text-2xl lg:text-3xl md:max-w-md lg:max-w-xl'>"Amazing Desings and Quality Work!"</h2>
           <p className='w-full max-w-80 md:max-w-md lg:max-w-lg text-center text-sm font-light mx-auto text-[#3E3F5C]'>

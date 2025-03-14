@@ -8,7 +8,7 @@ import ContactCard from './ContactCard'
 
 const TeamMembers = () => {
   return (
-    <section className='bg-[#F1F3FF] w-full'>
+    <section id='ourteam' className='bg-[#F1F3FF] w-full'>
          <div className='container mx-auto'>
              <div className='px-8 flex flex-col items-center gap-6 pb-16'>
                   <Title title="Meet Our Team" description="Behind every great achievement is a great team. Our team of passionate professionals works together to deliver innovative solutions and make a positive impact." color='#393A56' />

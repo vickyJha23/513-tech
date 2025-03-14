@@ -7,7 +7,7 @@ import CustomerCard from './CustomerCard'
 
 const Customers = () => {
   return (
-    <div className='px-8 flex flex-col gap-6 items-center'>
+    <div id='customers' className='px-8 flex flex-col gap-6 items-center'>
          <Title title="Our customers" description="Our customers are at the heart of everything we do. We value their trust and work tirelessly to deliver exceptional results." />
          <div className='w-full flex pt-8 flex-wrap gap-3 justify-center items-center pb-16'>
            {
