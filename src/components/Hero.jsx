@@ -12,20 +12,18 @@ const Hero = () => {
            });
            AOS.refresh();
      }, [])
-
-   if(pathname.slice(1) === "about"){
-        return <section className='w-full h-[60vh]' style={{ backgroundImage: "url('https://cdn.sigma.software/wp-content/uploads/2023/01/service-webdesign-hero-1440@3x.jpg')",
+   if(pathname.slice(1).length > 1){
+        return <section className='w-full h-[60vh] relative -z-10' style={{ backgroundImage: "url('https://cdn.sigma.software/wp-content/uploads/2023/01/service-webdesign-hero-1440@3x.jpg')",
           backgroundSize: "cover",
           backgroundPosition: "center center",
           backgroundRepeat: "no-repeat",
          }}>
-             <div className='w-full h-full flex justify-center items-center relative before:absolute before:top-0 before:left-0 before:right-0 before:w-full before:h-full before:bg-[#242a56] before:opacity-80'>
-                 <div className='w-full h-full flex justify-center items-center'>
-                       <h2 className='text-2xl text-white capitalize tracking-wide font-bold bg-black'>Home / {pathname.slice(1)}</h2>
+             <div className='w-full h-full select-none flex justify-center items-center relative before:absolute before:top-0 before:left-0 before:right-0 before:w-full before:h-full before:bg-[#242a56] before:opacity-80 before:z-10'>
+                 <div className='w-full h-full flex justify-center items-center relative
+                  z-50'>
+                       <h2 className='text-2xl text-white capitalize tracking-wide font-bold'>Home / {pathname.slice(1)}</h2>
                  </div>
-
              </div>
-
         </section>
    }  
 
@@ -36,7 +34,7 @@ const Hero = () => {
       backgroundPosition: "center center",
       backgroundRepeat: "no-repeat",
      }}>
-      <div className='w-full h-full flex justify-center items-center relative before:absolute before:top-0 before:left-0 before:right-0 before:w-full before:h-full before:bg-[#242a56] before:opacity-80'>
+      <div className='select-none w-full h-full flex justify-center items-center relative before:absolute before:top-0 before:left-0 before:right-0 before:w-full before:h-full before:bg-[#242a56] before:opacity-80'>
              <div className='container mx-auto flex flex-col gap-6 items-center md:items-start px-8' data-aos='fade-up' data-aos-duration='2000' data-aos-once='false'>
                  <h3 className='capitalize font-bold text-white text-lg max-w-80 text-center md:text-left md:max-w-md'>Fastest and most Lightweight wp theme</h3>
                  <h1 className='text-center capitalize max-w-80 font-bold text-3xl text-white md:text-left md:max-w-md md:text-5xl xl:max-w-lg'>

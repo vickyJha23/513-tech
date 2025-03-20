@@ -1,16 +1,10 @@
-import React, { useEffect } from 'react';
-import AOS from 'aos';
+import React from 'react';
+
 
 
 import "aos/dist/aos.css";
 
 const ServiceCard = ({icon, title, description, animationDirection}) => {
-     useEffect(() => {
-          AOS.init({
-            //   once: true,
-          }
-          );
-     }, [])
   return (
      <div className='flex flex-col gap-6 items-center'>
             <div className='max-w-80 w-[320px] min-h-56 sm:max-w-70 md:max-w-80 md:w-sm lg:max-w-md bg-white shadow-md rounded-md p-6 flex flex-col gap-3 transition-all duration-500 ease-in-out' data-aos={animationDirection} data-aos-duration='1000'>
